@@ -12,6 +12,7 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 * {
@@ -35,7 +36,25 @@ body {
   text-align: center;
   justify-content: center;
   border-radius: 5px;
-  box-shadow: 5px 5px 20px rgba(83, 104, 223, 0.2);
+  box-shadow: 5px 5px 20px rgba(83, 104, 223, 0.3);
+}
+.btn-default-outline {
+  display: flex;
+  padding: 1.2rem 1.5rem;
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: var(--Blue600);
+  border: none;
+  text-align: center;
+  justify-content: center;
+  outline: 2px solid var(--Blue600);
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px rgba(83, 104, 223, 0.3);
+}
+.btn-default-outline:hover {
+  background-color: var(--Blue600);
+  color: #fff;
+  outline: 2px solid var(--Grey50);
 }
 .btn-default-red {
   display: flex;
@@ -62,10 +81,16 @@ body {
 
 h1 {
   font-size: 3.5rem;
+  font-weight: 400;
 }
 
 h2 {
   font-size: 2.8rem;
+  font-weight: 400;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 .hide {
@@ -154,7 +179,8 @@ nav ul li a:hover {
 .hero-btns {
   display: flex;
 }
-.hero-btns .btn-default-blue {
+.hero-btns .btn-default-blue,
+.hero-btns .btn-default-outline {
   margin-right: 1rem;
   margin-top: 3rem;
 }
@@ -196,7 +222,7 @@ nav ul li a:hover {
   padding: 0 0 3rem 0;
 }
 .features-text {
-  width: 30vw;
+  width: 33vw;
 }
 
 .bg-art-2 {
@@ -293,7 +319,7 @@ nav ul li a:hover {
 
 .download-info {
   padding: 3rem 0px;
-  width: 20vw;
+  width: 33vw;
 }
 
 .download-card-wrapper {
@@ -311,7 +337,7 @@ nav ul li a:hover {
   color: var(--Blue950);
   border: 1px solid var(--Grey50);
   border-radius: 10px;
-  box-shadow: 0px 20px 20px rgba(83, 104, 223, 0.2);
+  box-shadow: 0px 20px 20px rgba(83, 104, 223, 0.3);
   transition: transform 0.2s ease-in-out;
 }
 
@@ -361,8 +387,17 @@ nav ul li a:hover {
   align-items: center;
 }
 
+.faq-info-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
 .faq-info {
   margin: 3rem 0;
+  width: 33vw;
+  text-align: center;
 }
 
 .accordian-container {
@@ -518,12 +553,23 @@ hr {
   .download-card-wrapper {
     width: 80vw;
   }
-    .bg-art-2 {
+  .bg-art-2 {
     top: 1850px;
     left: 0;
     rotate: 180deg;
   }
-  
+
+  .features-text {
+    width: 50vw;
+  }
+
+  .download-info {
+    width: 50vw;
+  }
+
+  .faq-info {
+    width: 50vw;
+  }
 }
 @media (max-width: 1300px) {
   .download-card-wrapper {
@@ -592,13 +638,13 @@ hr {
     text-align: center;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 85vw;
     margin-top: 0;
     padding: 0 3rem;
   }
 
   .tab-info p {
-    width: 100%;
+    width: 85vw;
     padding: 3rem 3rem;
   }
   #content-text {
@@ -616,7 +662,7 @@ hr {
     padding: 0 3rem;
   }
   .download-info {
-    width: 100%;
+    width: 85vw;
     padding: 3rem;
   }
 
@@ -639,6 +685,7 @@ hr {
     height: auto;
   }
   .faq-info {
+    width: 85vw;
     padding: 3rem;
     text-align: center;
   }
@@ -694,7 +741,7 @@ hr {
   }
 
   .bg-art-2 {
-    top: 1850px;
+    top: 2120px;
     left: 0;
     rotate: 180deg;
   }
@@ -717,9 +764,7 @@ hr {
     min-height: 200px;
   }
   .bg-art-2 {
-    top: 1720px;
-    left: 0;
-    rotate: 180deg;
+    top: 2100px;
   }
   .download-card {
     margin-bottom: 3rem;
@@ -750,13 +795,14 @@ hr {
 
   .nav-list-mobile {
     display: flex;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     transform: translateX(100%);
+    overflow-x: hidden;
     flex-direction: column;
     height: 100%;
-    width: 100vw;
+    width: 100%;
     align-items: center;
     justify-content: center;
     z-index: 2;
@@ -788,7 +834,7 @@ hr {
 
   .hamburger-icon {
     display: block;
-    position: absolute;
+    position: fixed;
     right: 40px;
     top: 55px;
     margin: 0;
@@ -798,8 +844,8 @@ hr {
   }
 
   .mobile-logo {
-    position: absolute;
-    left: 3rem;
+    position: fixed;
+    left: 9vw;
     top: 3.5rem;
     opacity: 1;
     width: 200px;
@@ -809,6 +855,26 @@ hr {
   .error-message {
     position: relative;
     bottom: 150px;
+  }
+  .hero-info {
+    width: 90vw;
+  }
+
+  .tab-info {
+    align-self: center;
+    margin: 0;
+  }
+
+  .features-text {
+    width: 90vw;
+  }
+
+  .download-info {
+    width: 90vw;
+  }
+
+  .faq-info {
+    width: 90vw;
   }
 
   footer {
@@ -828,11 +894,17 @@ hr {
   }
 }
 
+@media (max-width: 700px) {
+  .bg-art-2 {
+    top: 2000px;
+  }
+}
+
 @media (max-width: 450px) {
   .hero-background-art {
     top: 200px;
   }
   .bg-art-2 {
-    top: 1740px;
+    top: 1900px;
   }
 }
